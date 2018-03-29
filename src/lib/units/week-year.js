@@ -83,6 +83,40 @@ export function getWeeksInYear () {
     return weeksInYear(this.year(), weekInfo.dow, weekInfo.doy);
 }
 
+export function getWeekRange (input) {
+    var range = [];
+
+    if (typeof input !== 'object') {
+        input = {};
+    }
+
+    if (!input.hasOwnProperty('year')) {
+        input.year = this.year();
+    }
+
+    if (!input.hasOwnProperty('week')) {
+        input.week = 1;
+    }
+
+    var week = this.week(input.week);
+
+    range.push(week);
+
+    for (var d = 1; d < 7; d++) {
+        var next = week.clone();
+
+        next.add(d, 'days');
+
+        range.push(next);
+    }
+
+    console.log('\ninput:');
+    console.log(input);
+
+    console.log('\nrange:');
+    console.log(range);
+}
+
 function getSetWeekYearHelper(input, week, weekday, dow, doy) {
     var weeksTarget;
     if (input == null) {

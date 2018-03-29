@@ -63,7 +63,8 @@ proto.year       = getSetYear;
 proto.isLeapYear = getIsLeapYear;
 
 // Week Year
-import { getSetWeekYear, getSetISOWeekYear, getWeeksInYear, getISOWeeksInYear } from '../units/week-year';
+import { getSetWeekYear, getSetISOWeekYear, getWeeksInYear, getISOWeeksInYear, getWeekRange } from '../units/week-year';
+proto.weekRange   = getWeekRange;
 proto.weekYear    = getSetWeekYear;
 proto.isoWeekYear = getSetISOWeekYear;
 
